@@ -1,0 +1,550 @@
+{
+  "id": "point2cad-abc-example",
+  "revision": 0,
+  "last_node_id": 19,
+  "last_link_id": 27,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadPointCloudXYZ",
+      "pos": [
+        100,
+        100
+      ],
+      "size": [
+        303.343359375,
+        78
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "point_cloud_mesh",
+          "type": "TRIMESH",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "title": "Load Point Cloud (XYZ): abc_00470.xyz",
+      "properties": {
+        "aux_id": "PozzettiAndrea/ComfyUI-CADabra",
+        "ver": "b353e03b45eb484d0ebd860f82f3e9dce259f29b",
+        "Node name for S&R": "LoadPointCloudXYZ",
+        "cnr_id": "comfyui-cadabra"
+      },
+      "widgets_values": [
+        "abc_00470.xyz"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "PreviewAny",
+      "pos": [
+        820,
+        280
+      ],
+      "size": [
+        340,
+        200
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 5
+        }
+      ],
+      "outputs": [],
+      "title": "Segmentation Summary",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadPoint2CADModel",
+      "pos": [
+        100,
+        220
+      ],
+      "size": [
+        300,
+        102
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "POINT2CAD_MODEL",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "model_info",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "aux_id": "PozzettiAndrea/ComfyUI-CADabra",
+        "ver": "b353e03b45eb484d0ebd860f82f3e9dce259f29b",
+        "Node name for S&R": "LoadPoint2CADModel",
+        "cnr_id": "comfyui-cadabra"
+      },
+      "widgets_values": [
+        "ParseNet (no normals)",
+        true
+      ]
+    },
+    {
+      "id": 12,
+      "type": "GeomPackPreviewMeshVTK",
+      "pos": [
+        821.6766556773096,
+        562.477234247735
+      ],
+      "size": [
+        512,
+        702
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "trimesh",
+          "type": "TRIMESH",
+          "link": 10
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "aux_id": "PozzettiAndrea/ComfyUI-GeometryPack",
+        "ver": "f0ff4d3183ee8f860a6e0b33bbdc7332b7297f18",
+        "Node name for S&R": "GeomPackPreviewMeshVTK",
+        "cnr_id": "comfyui-geometrypack"
+      },
+      "widgets_values": [
+        "fields",
+        ""
+      ]
+    },
+    {
+      "id": 13,
+      "type": "GeomPackPreviewMeshVTK",
+      "pos": [
+        1352.8644911142878,
+        566.724527740218
+      ],
+      "size": [
+        512,
+        702
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "trimesh",
+          "type": "TRIMESH",
+          "link": 17
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "aux_id": "PozzettiAndrea/ComfyUI-GeometryPack",
+        "ver": "f0ff4d3183ee8f860a6e0b33bbdc7332b7297f18",
+        "Node name for S&R": "GeomPackPreviewMeshVTK",
+        "cnr_id": "comfyui-geometrypack"
+      },
+      "widgets_values": [
+        "fields",
+        ""
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Point2CADSegmentation",
+      "pos": [
+        450,
+        100
+      ],
+      "size": [
+        320,
+        174
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "point_cloud",
+          "type": "TRIMESH,POINT_CLOUD",
+          "link": 1
+        },
+        {
+          "name": "model",
+          "type": "POINT2CAD_MODEL",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "segmented_cloud",
+          "type": "TRIMESH",
+          "links": [
+            10,
+            14
+          ]
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "PozzettiAndrea/ComfyUI-CADabra",
+        "ver": "b353e03b45eb484d0ebd860f82f3e9dce259f29b",
+        "Node name for S&R": "Point2CADSegmentation",
+        "cnr_id": "comfyui-cadabra"
+      },
+      "widgets_values": [
+        "ParseNet (no normals)",
+        10240,
+        0.5,
+        0.015,
+        50
+      ]
+    },
+    {
+      "id": 10,
+      "type": "PreviewAny",
+      "pos": [
+        1244.325982212035,
+        302.3237345041323
+      ],
+      "size": [
+        340,
+        200
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 18
+        }
+      ],
+      "outputs": [],
+      "title": "Surface Fitting Summary",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
+    },
+    {
+      "id": 17,
+      "type": "GeomPackPreviewMeshVTK",
+      "pos": [
+        1998.778125167959,
+        -51.74924010586372
+      ],
+      "size": [
+        512,
+        702
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "trimesh",
+          "type": "TRIMESH",
+          "link": 25
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "aux_id": "PozzettiAndrea/ComfyUI-GeometryPack",
+        "ver": "f0ff4d3183ee8f860a6e0b33bbdc7332b7297f18",
+        "Node name for S&R": "GeomPackPreviewMeshVTK",
+        "cnr_id": "comfyui-geometrypack"
+      },
+      "widgets_values": [
+        "fields",
+        ""
+      ]
+    },
+    {
+      "id": 16,
+      "type": "PreviewAny",
+      "pos": [
+        1625.3753176730258,
+        138.4667621549598
+      ],
+      "size": [
+        314.61758478821775,
+        177.95810361596338
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 27
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
+    },
+    {
+      "id": 19,
+      "type": "Point2CADTopologyExtraction",
+      "pos": [
+        1218.8592936563562,
+        44.27912508345171
+      ],
+      "size": [
+        295.2232421875,
+        166
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "surface_params",
+          "type": "SURFACE_PARAMS",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "topology",
+          "type": "BREP_TOPOLOGY",
+          "links": []
+        },
+        {
+          "name": "mesh_result",
+          "type": "TRIMESH",
+          "links": [
+            25
+          ]
+        },
+        {
+          "name": "brep_result",
+          "type": "CAD_MODEL",
+          "links": null
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "PozzettiAndrea/ComfyUI-CADabra",
+        "ver": "8df4419a66734f3abdc46a6451d8457e75fe7983",
+        "Node name for S&R": "Point2CADTopologyExtraction",
+        "cnr_id": "comfyui-cadabra"
+      },
+      "widgets_values": [
+        "PyVista (mesh-based)",
+        0.001,
+        0.01
+      ]
+    },
+    {
+      "id": 14,
+      "type": "Point2CADSurfaceFitting",
+      "pos": [
+        845.4665031558691,
+        104.94682282350824
+      ],
+      "size": [
+        276.439453125,
+        122
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "segmented_cloud",
+          "type": "TRIMESH",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "surface_params",
+          "type": "SURFACE_PARAMS",
+          "links": [
+            24
+          ]
+        },
+        {
+          "name": "surface_meshes",
+          "type": "TRIMESH",
+          "links": [
+            17
+          ]
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "PozzettiAndrea/ComfyUI-CADabra",
+        "ver": "b353e03b45eb484d0ebd860f82f3e9dce259f29b",
+        "Node name for S&R": "Point2CADSurfaceFitting",
+        "cnr_id": "comfyui-cadabra"
+      },
+      "widgets_values": [
+        true,
+        "cuda"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      4,
+      0,
+      "TRIMESH"
+    ],
+    [
+      2,
+      2,
+      0,
+      4,
+      1,
+      "POINT2CAD_MODEL"
+    ],
+    [
+      5,
+      4,
+      1,
+      9,
+      0,
+      "STRING"
+    ],
+    [
+      10,
+      4,
+      0,
+      12,
+      0,
+      "TRIMESH"
+    ],
+    [
+      14,
+      4,
+      0,
+      14,
+      0,
+      "TRIMESH"
+    ],
+    [
+      17,
+      14,
+      1,
+      13,
+      0,
+      "TRIMESH"
+    ],
+    [
+      18,
+      14,
+      2,
+      10,
+      0,
+      "*"
+    ],
+    [
+      24,
+      14,
+      0,
+      19,
+      0,
+      "SURFACE_PARAMS"
+    ],
+    [
+      25,
+      19,
+      1,
+      17,
+      0,
+      "TRIMESH"
+    ],
+    [
+      27,
+      19,
+      3,
+      16,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6927994503472918,
+      "offset": [
+        -139.7280309149481,
+        374.30390932032714
+      ]
+    },
+    "frontendVersion": "1.34.8",
+    "workflowRendererVersion": "LG"
+  },
+  "version": 0.4
+}
