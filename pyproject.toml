@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-point2cad"
-description = "Point2CAD: Point Cloud to CAD Reconstruction - Originally from ComfyUI-CADabra"
+description = "THIS NODE IS WIP. Point2CAD: Point Cloud to CAD Reconstruction - Originally from ComfyUI-CADabra"
 version = "1.0.0"
 license = {file = "LICENSE"}
 requires-python = ">=3.10"

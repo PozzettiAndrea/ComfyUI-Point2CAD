@@ -1,3 +1,7 @@
+----------
+Work in Progress! This node is not finished.
+----------
+
 # ComfyUI-Point2CAD
 
 Point cloud to CAD reconstruction using neural network based segmentation.
@@ -42,6 +46,12 @@ pip install -r ComfyUI-Point2CAD/requirements.txt
 - open3d>=0.17.0
 - scipy>=1.11.0
 - geomdl>=5.3.0 (B-spline operations)
+
+## Community
+
+Questions or feature requests? Open a [Discussion](https://github.com/PozzettiAndrea/ComfyUI-Point2CAD/discussions) on GitHub.
+
+Join the [Comfy3D Discord](https://discord.gg/PN743tE5) for help, updates, and chat about 3D workflows in ComfyUI.
 
 ## Credits
 
